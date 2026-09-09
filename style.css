@@ -1735,3 +1735,209 @@ footer span {
     padding: 60px 15px;
   }
 }
+
+/* =========================
+   PREMIUM FINAL MESSAGE
+========================= */
+
+.message-section {
+  position: relative;
+  padding: 100px 20px 80px;
+  text-align: center;
+}
+
+.message-card {
+  position: relative;
+  max-width: 700px;
+  margin: auto;
+  padding: 45px 30px;
+
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.25),
+    0 0 40px rgba(255, 105, 180, 0.12);
+
+  overflow: hidden;
+}
+
+/* glowing border */
+.message-card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+
+  border-radius: 32px;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 105, 180, 0.5),
+    transparent,
+    rgba(199, 125, 255, 0.5),
+    transparent
+  );
+
+  z-index: -1;
+  animation: messageGlow 5s linear infinite;
+}
+
+@keyframes messageGlow {
+  0% {
+    transform: translateX(-60%);
+  }
+
+  100% {
+    transform: translateX(60%);
+  }
+}
+
+.message-card h2 {
+  margin-bottom: 22px;
+
+  font-size: clamp(28px, 6vw, 46px);
+
+  font-family: "Dancing Script", cursive;
+
+  background: linear-gradient(
+    90deg,
+    #ff8fbd,
+    #ffffff,
+    #d8a4ff
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: titleShine 4s ease-in-out infinite;
+}
+
+@keyframes titleShine {
+  0%, 100% {
+    filter: brightness(1);
+  }
+
+  50% {
+    filter: brightness(1.5);
+  }
+}
+
+.message-card p {
+  max-width: 560px;
+  margin: auto;
+
+  color: rgba(255,255,255,0.88);
+
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+/* Big heart */
+.final-heart {
+  display: block;
+  margin: 25px auto 5px;
+
+  font-size: 45px;
+
+  animation:
+    heartBeat 1.5s infinite,
+    heartGlow 2s infinite alternate;
+}
+
+@keyframes heartBeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  15% {
+    transform: scale(1.18);
+  }
+
+  30% {
+    transform: scale(1);
+  }
+
+  45% {
+    transform: scale(1.12);
+  }
+}
+
+@keyframes heartGlow {
+  from {
+    filter: drop-shadow(
+      0 0 5px rgba(255, 80, 150, 0.4)
+    );
+  }
+
+  to {
+    filter: drop-shadow(
+      0 0 25px rgba(255, 80, 150, 0.9)
+    );
+  }
+}
+
+/* little stars */
+.message-stars {
+  margin-top: 25px;
+
+  font-size: 18px;
+  letter-spacing: 12px;
+
+  opacity: 0.8;
+
+  animation: starFloat 3s ease-in-out infinite;
+}
+
+@keyframes starFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Footer */
+footer {
+  position: relative;
+  padding: 25px 15px 35px;
+
+  text-align: center;
+
+  color: rgba(255,255,255,0.55);
+
+  font-size: 13px;
+}
+
+footer span {
+  color: #ff82b5;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+  .message-section {
+    padding: 75px 15px 60px;
+  }
+
+  .message-card {
+    padding: 35px 20px;
+    border-radius: 24px;
+  }
+
+  .message-card p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .final-heart {
+    font-size: 40px;
+  }
+}
