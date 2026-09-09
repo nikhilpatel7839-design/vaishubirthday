@@ -185,6 +185,29 @@ document.addEventListener("DOMContentLoaded", () => {
         startMainEffects();
         startBirthdayBurst();
 
+        const birthdaySong = document.getElementById("birthdaySong");
+const musicBtn = document.getElementById("musicBtn");
+
+if (birthdaySong) {
+  birthdaySong.volume = 0.55;
+
+  birthdaySong.play().catch(() => {
+    console.log("Music waiting for user interaction.");
+  });
+}
+
+if (musicBtn) {
+  musicBtn.addEventListener("click", () => {
+    if (birthdaySong.paused) {
+      birthdaySong.play();
+      musicBtn.textContent = "🔊";
+    } else {
+      birthdaySong.pause();
+      musicBtn.textContent = "🔇";
+    }
+  });
+}
+
       }, 500);
 
     }, 180);
