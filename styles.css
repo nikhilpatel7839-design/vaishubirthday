@@ -158,8 +158,10 @@ body {
   color: #fff;
 
   text-shadow:
-    0 0 15px rgba(255, 139, 196, .35),
-    0 0 45px rgba(255, 96, 177, .2);
+    0 0 10px rgba(255, 139, 196, .4),
+    0 0 25px rgba(255, 96, 177, .3),
+    0 0 40px rgba(255, 139, 196, .2),
+    0 0 60px rgba(255, 96, 177, .15);
 }
 
 .welcome-content h1 span {
@@ -195,7 +197,7 @@ body {
 
 
 /* =========================
-   ENTER BUTTON
+   ENTER BUTTON - ENHANCED
 ========================= */
 
 .enter-btn {
@@ -223,7 +225,7 @@ body {
 
   backdrop-filter: blur(10px);
 
-  transition: .35s;
+  transition: all 0.35s cubic-bezier(.34, 1.56, .64, 1);
 
   box-shadow:
     0 0 0 rgba(255,95,170,0);
@@ -238,14 +240,15 @@ body {
 }
 
 .enter-btn:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px) scale(1.05);
 
-  background: rgba(255,111,181,.16);
+  background: rgba(255, 111, 181, .22);
 
-  border-color: rgba(255,160,205,.6);
+  border-color: rgba(255, 160, 205, .8);
 
   box-shadow:
-    0 10px 40px rgba(255,80,170,.25);
+    0 15px 50px rgba(255, 80, 170, .35),
+    inset 0 1px 0 rgba(255, 255, 255, .2);
 }
 
 .enter-btn:active {
@@ -254,7 +257,7 @@ body {
 
 
 /* =========================
-   FLYING BALLOONS
+   FLYING BALLOONS - SMOOTH
 ========================= */
 
 .balloon {
@@ -269,7 +272,7 @@ body {
 
   opacity: .8;
 
-  animation: balloonFly linear forwards;
+  animation: balloonFly cubic-bezier(.25, .46, .45, .94) forwards;
 
   filter: drop-shadow(0 8px 12px rgba(0,0,0,.2));
 }
@@ -518,7 +521,7 @@ body {
 
 
 /* =========================
-   COUNTDOWN
+   COUNTDOWN - ENHANCED
 ========================= */
 
 .countdown-box {
@@ -570,6 +573,19 @@ body {
   background: rgba(255,255,255,.05);
 
   border: 1px solid rgba(255,255,255,.08);
+
+  animation: countdownPulse 2s ease-in-out infinite;
+}
+
+@keyframes countdownPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(255, 156, 202, 0);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(255, 156, 202, .3);
+  }
 }
 
 .time-box span {
@@ -665,7 +681,7 @@ body {
 
 
 /* =========================
-   PHOTO SLIDER
+   PHOTO SLIDER - ENHANCED
 ========================= */
 
 .photo-slider {
@@ -735,6 +751,14 @@ body {
 
   box-shadow:
     0 25px 70px rgba(0,0,0,.35);
+
+  transition: all 0.3s ease;
+}
+
+.photo-card:hover .photo-frame {
+  transform: scale(1.02);
+  box-shadow:
+    0 30px 80px rgba(255, 119, 180, .25);
 }
 
 .photo-frame img {
@@ -883,7 +907,7 @@ body {
 
 
 /* =========================
-   CAKE
+   CAKE - ANIMATED BACKGROUND
 ========================= */
 
 .cake-section {
@@ -892,9 +916,20 @@ body {
   background:
     radial-gradient(
       circle at center,
-      rgba(255,93,173,.08),
+      rgba(255, 93, 173, .12),
       transparent 45%
     );
+  background-size: 200% 200%;
+  animation: gradientShift 6s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 .cake-area {
@@ -998,254 +1033,235 @@ body {
     inset 0 -10px 20px rgba(0,0,0,.1);
 }
 
-.cake-top .cream {
-  position: absolute;
-
-  left: 0;
-  right: 0;
-  top: -10px;
-
-  height: 28px;
-
-  border-radius: 50%;
-
-  background: #fff1f7;
-}
-
 .cake-top span {
-  display: block;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
 
-  padding-top: 35px;
-
-  font-family: "Great Vibes", cursive;
-
-  font-size: 20px;
-
-  color: #8b3f60;
+  font-size: 18px;
+  color: #fff;
 }
 
 .cake-top strong {
-  display: block;
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
 
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: 21px;
-
-  color: #74334f;
+  font-size: 20px;
+  color: #fff;
 }
 
 .cake-body {
-  position: relative;
-
   height: 80px;
 
-  margin-top: -3px;
-
-  border-radius: 0 0 18px 18px;
-
   background:
-    linear-gradient(180deg, #9d5475, #733c58);
+    linear-gradient(180deg, #e97ba9, #d4638b);
+
+  position: relative;
+}
+
+.cake-line {
+  height: 1px;
+
+  background: rgba(255,255,255,.1);
+
+  position: absolute;
+
+  width: 100%;
+}
+
+.cake-line:nth-of-type(1) {
+  top: 35px;
+}
+
+.cake-line:nth-of-type(2) {
+  top: 45px;
 }
 
 .drip {
   position: absolute;
 
-  top: 0;
-  left: 0;
-  right: 0;
+  width: 8px;
+  height: 15px;
 
-  height: 25px;
+  top: -15px;
+  left: 35%;
 
-  background: #fff0f6;
+  background: #d4638b;
 
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    100% 50%,
-    92% 50%,
-    89% 100%,
-    84% 100%,
-    82% 50%,
-    70% 50%,
-    68% 85%,
-    63% 85%,
-    61% 50%,
-    45% 50%,
-    43% 100%,
-    38% 100%,
-    36% 50%,
-    20% 50%,
-    18% 80%,
-    13% 80%,
-    11% 50%,
-    0 50%
-  );
-}
-
-.cake-line {
-  height: 2px;
-
-  width: 75%;
-
-  margin: 25px auto 0;
-
-  background: rgba(255,255,255,.15);
+  border-radius: 0 0 50% 50%;
 }
 
 .cake-base {
-  height: 18px;
+  height: 25px;
 
-  margin-top: 0;
+  background:
+    linear-gradient(180deg, #d4638b, #b84a6f);
 
-  border-radius: 0 0 20px 20px;
+  border-radius: 0 0 15px 15px;
 
-  background: #51283f;
+  box-shadow:
+    inset 0 1px 10px rgba(0,0,0,.2);
 }
-
-
-/* =========================
-   SPARKLE RING
-========================= */
 
 .sparkle-ring {
   position: absolute;
 
-  width: 350px;
-  height: 350px;
+  width: 320px;
+  height: 320px;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  border: 2px solid rgba(255,255,255,.08);
 
   border-radius: 50%;
 
-  left: 50%;
-  top: 45px;
+  opacity: .5;
 
-  transform: translateX(-50%);
-
-  border: 1px dashed rgba(255,162,204,.16);
-
-  animation: rotateRing 20s linear infinite;
-
-  pointer-events: none;
+  animation: sparkleRing 3s linear infinite;
 }
 
-@keyframes rotateRing {
+@keyframes sparkleRing {
+  from {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+
   to {
-    transform:
-      translateX(-50%)
-      rotate(360deg);
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
 
-
-/* =========================
-   WISH BUTTON
-========================= */
-
 .wish-btn {
-  margin-top: 45px;
+  position: relative;
 
-  padding: 13px 28px;
+  margin-top: 30px;
+
+  padding: 14px 32px;
+
+  border: 1px solid rgba(255,160,205,.4);
 
   border-radius: 50px;
 
-  border: 1px solid rgba(255,255,255,.15);
+  background: rgba(255,111,181,.12);
 
-  background: rgba(255,255,255,.06);
-
-  color: #fff;
-
-  cursor: pointer;
+  color: #ffb3d4;
 
   font-family: "Poppins", sans-serif;
 
-  transition: .3s;
+  font-size: 14px;
+
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(10px);
+
+  transition: all 0.35s cubic-bezier(.34, 1.56, .64, 1);
 }
 
 .wish-btn:hover {
-  background: rgba(255,118,183,.18);
+  transform: scale(1.06);
 
-  transform: translateY(-3px);
+  background: rgba(255, 111, 181, .18);
+
+  border-color: rgba(255, 160, 205, .7);
 
   box-shadow:
-    0 10px 30px rgba(255,80,170,.2);
+    0 10px 35px rgba(255, 80, 170, .25);
 }
 
 .wish-message {
   margin-top: 20px;
 
-  color: #ffb3d2;
+  color: #c9afc7;
 
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: 20px;
+  font-size: 13px;
 
   opacity: 0;
 
-  transform: translateY(10px);
-
-  transition: .7s;
+  animation: messageSlideIn .6s ease forwards;
 }
 
 .wish-message.show {
-  opacity: 1;
+  animation: messageSlideIn .6s ease forwards;
+}
 
-  transform: translateY(0);
+@keyframes messageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 
 /* =========================
-   FINAL MESSAGE
+   MESSAGE SECTION - GLASS CARD
 ========================= */
 
 .message-section {
-  min-height: 80vh;
-
-  display: flex;
-
-  justify-content: center;
-
-  align-items: center;
-
   background:
     radial-gradient(
       circle at center,
-      rgba(255,106,177,.1),
-      transparent 55%
+      rgba(132, 98, 255, .06),
+      transparent 60%
     );
 }
 
 .message-card {
-  width: min(750px, 100%);
+  width: min(700px, 90%);
 
-  padding: 65px 35px;
+  margin: auto;
+
+  padding: 60px 40px;
+
+  border-radius: 25px;
+
+  background: rgba(255, 255, 255, .06);
+
+  border: 1px solid rgba(255, 255, 255, .1);
+
+  backdrop-filter: blur(20px);
+
+  box-shadow: 0 25px 70px rgba(0, 0, 0, .25);
 
   text-align: center;
-
-  border-radius: 35px;
-
-  background: rgba(255,255,255,.045);
-
-  border: 1px solid rgba(255,255,255,.1);
-
-  backdrop-filter: blur(18px);
-
-  box-shadow:
-    0 30px 80px rgba(0,0,0,.3);
 }
 
 .message-icon {
-  font-size: 42px;
+  font-size: 45px;
 
-  color: #ff9ec7;
+  color: #ff91bd;
 
   margin-bottom: 15px;
+
+  animation: messageIconFloat 3s ease-in-out infinite;
+}
+
+@keyframes messageIconFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .message-small {
-  color: #b899aa;
+  color: #d4a5c0;
 
-  font-size: 10px;
+  font-size: 11px;
 
-  letter-spacing: 3px;
+  letter-spacing: 2px;
 
   text-transform: uppercase;
 }
@@ -1255,9 +1271,9 @@ body {
 
   font-family: "Cormorant Garamond", serif;
 
-  font-size: 58px;
+  font-size: clamp(40px, 7vw, 65px);
 
-  line-height: .9;
+  line-height: .95;
 
   font-weight: 500;
 }
@@ -1265,45 +1281,43 @@ body {
 .message-card h2 em {
   font-family: "Great Vibes", cursive;
 
-  color: #ff9fc9;
-
-  font-size: 1.25em;
+  color: #ff9ec8;
 
   font-style: normal;
 }
 
 .final-message {
-  margin: 35px auto 0;
+  margin-top: 30px;
 
-  max-width: 600px;
-
-  color: #cfc0ce;
+  color: #d6c7d5;
 
   font-family: "Cormorant Garamond", serif;
 
-  font-size: 21px;
+  font-size: 18px;
 
-  line-height: 1.6;
+  line-height: 1.8;
+
+  font-style: italic;
 }
 
 .final-heart {
-  margin-top: 35px;
+  font-size: 32px;
 
-  color: #ff8fbd;
+  color: #ff91bd;
 
-  font-size: 35px;
+  margin-top: 25px;
 
   animation: heartBeat 2s infinite;
 }
 
 .birthday-wish {
-  margin-top: 20px;
+  margin-top: 25px;
 
-  color: #ffb1d0;
+  color: #ff9fc9;
 
-  font-family: "Great Vibes", cursive;
+  font-size: 16px;
 
-  font-size: 32px;
+  letter-spacing: 1px;
 }
 
 
@@ -1312,19 +1326,19 @@ body {
 ========================= */
 
 footer {
-  padding: 35px 20px 45px;
+  padding: 30px 20px;
 
   text-align: center;
 
-  color: #766878;
+  color: #8d7a8e;
 
-  font-size: 11px;
+  font-size: 13px;
 
-  letter-spacing: 1px;
+  border-top: 1px solid rgba(255,255,255,.05);
 }
 
 footer span {
-  color: #ff8fbd;
+  color: #ff91bd;
 }
 
 
@@ -1335,24 +1349,16 @@ footer span {
 .confetti {
   position: fixed;
 
-  top: -20px;
-
-  width: 7px;
-  height: 12px;
-
-  z-index: 99999;
-
   pointer-events: none;
 
-  animation:
-    confettiFall 4s linear forwards;
+  animation: confettiFall 3s ease-out forwards;
 }
 
 @keyframes confettiFall {
-
   to {
     transform:
-      translateY(110vh)
+      translateY(100vh)
+      translateX(100px)
       rotate(720deg);
 
     opacity: 0;
@@ -1361,686 +1367,117 @@ footer span {
 
 
 /* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 600px) {
-
-  .welcome-content {
-    width: 92%;
-  }
-
-  .welcome-content h1 {
-    font-size: 76px;
-  }
-
-  .welcome-message {
-    font-size: 19px;
-  }
-
-  .countdown {
-    gap: 5px;
-  }
-
-  .time-box {
-    min-width: 62px;
-
-    padding: 10px 5px;
-  }
-
-  .time-box span {
-    font-size: 27px;
-  }
-
-  .time-box small {
-    font-size: 7px;
-
-    letter-spacing: 1px;
-  }
-
-  .colon {
-    font-size: 20px;
-  }
-
-  .photo-slider {
-    width: 88%;
-  }
-
-  .slider-btn {
-    width: 36px;
-    height: 36px;
-
-    font-size: 25px;
-  }
-
-  .slider-btn.prev {
-    left: -18px;
-  }
-
-  .slider-btn.next {
-    right: -18px;
-  }
-
-  .photo-caption {
-    font-size: 19px;
-  }
-
-  .cake {
-    transform: scale(.85);
-  }
-
-  .message-card {
-    padding: 50px 22px;
-  }
-
-  .message-card h2 {
-    font-size: 50px;
-  }
-
-  .final-message {
-    font-size: 19px;
-  }
-
-}
-
-
-/* =========================
-   VERY SMALL PHONES
-========================= */
-
-@media (max-width: 380px) {
-
-  .welcome-content h1 {
-    font-size: 66px;
-  }
-
-  .countdown-box {
-    padding: 22px 8px;
-  }
-
-  .time-box {
-    min-width: 55px;
-  }
-
-  .time-box span {
-    font-size: 24px;
-  }
-
-  .cake {
-    transform: scale(.75);
-    margin-top: -20px;
-    margin-bottom: -20px;
-  }
-
-}
-
-/* =========================
    MUSIC BUTTON
 ========================= */
 
 .music-btn {
   position: fixed;
-  right: 18px;
-  bottom: 18px;
 
-  width: 54px;
-  height: 54px;
+  bottom: 30px;
+  right: 30px;
 
-  border: 1px solid rgba(255,255,255,0.45);
+  z-index: 1000;
+
+  width: 50px;
+  height: 50px;
+
   border-radius: 50%;
 
-  background: rgba(255,255,255,0.16);
-  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,.2);
+
+  background: rgba(255,111,181,.15);
 
   color: white;
-  font-size: 23px;
+
+  font-size: 24px;
 
   cursor: pointer;
-  z-index: 9999;
 
-  box-shadow:
-    0 0 15px rgba(255,105,180,0.35),
-    0 0 35px rgba(255,105,180,0.15);
+  backdrop-filter: blur(10px);
 
   transition: all 0.3s ease;
 
-  animation: musicPulse 2s infinite;
+  box-shadow:
+    0 0 20px rgba(255,111,181,.15);
 }
 
 .music-btn:hover {
-  transform: scale(1.12);
+  transform: scale(1.1);
+
+  background: rgba(255, 111, 181, .25);
+
   box-shadow:
-    0 0 20px rgba(255,105,180,0.6),
-    0 0 45px rgba(255,105,180,0.25);
+    0 0 30px rgba(255, 111, 181, .3);
 }
 
 .music-btn:active {
-  transform: scale(0.9);
+  transform: scale(0.95);
 }
 
-@keyframes musicPulse {
-  0%, 100% {
-    box-shadow:
-      0 0 15px rgba(255,105,180,0.35);
-  }
-
-  50% {
-    box-shadow:
-      0 0 25px rgba(255,105,180,0.65),
-      0 0 45px rgba(255,105,180,0.2);
-  }
-}
-
-@media (max-width: 600px) {
-  .music-btn {
-    width: 48px;
-    height: 48px;
-    right: 14px;
-    bottom: 14px;
-    font-size: 20px;
-  }
-}
 
 /* =========================
-   PREMIUM BIRTHDAY CAKE
+   RESPONSIVE
 ========================= */
 
-.cake-section {
-  position: relative;
-  padding: 80px 20px;
-  text-align: center;
-}
-
-.cake {
-  position: relative;
-  margin: 45px auto 30px;
-  width: 230px;
-  height: 145px;
-  filter: drop-shadow(0 15px 25px rgba(255, 105, 180, 0.3));
-}
-
-/* Cake layers */
-.cake::before {
-  content: "";
-  position: absolute;
-  left: 15px;
-  bottom: 0;
-  width: 200px;
-  height: 75px;
-  border-radius: 15px 15px 25px 25px;
-  background: linear-gradient(
-    to bottom,
-    #ffb6d5,
-    #ff7eb3
-  );
-  box-shadow:
-    inset 0 -12px 0 rgba(255,255,255,0.15),
-    0 12px 25px rgba(255,105,180,0.3);
-}
-
-/* Cream layer */
-.cake::after {
-  content: "♡  ♡  ♡  ♡  ♡";
-  position: absolute;
-  left: 18px;
-  bottom: 58px;
-  width: 194px;
-  height: 25px;
-  padding-top: 5px;
-  border-radius: 15px;
-  background: #fff4fa;
-  color: #ff5c9a;
-  font-size: 15px;
-  letter-spacing: 7px;
-  box-shadow: 0 4px 10px rgba(255,255,255,0.35);
-}
-
-/* Candles */
-.candle {
-  position: absolute;
-  bottom: 72px;
-  width: 16px;
-  height: 55px;
-  border-radius: 5px;
-  background: repeating-linear-gradient(
-    45deg,
-    #fff,
-    #fff 6px,
-    #ff72a8 6px,
-    #ff72a8 11px
-  );
-  z-index: 5;
-  box-shadow: 0 4px 10px rgba(255,105,180,0.25);
-}
-
-.candle:nth-child(1) {
-  left: 50px;
-}
-
-.candle:nth-child(2) {
-  left: 82px;
-}
-
-.candle:nth-child(3) {
-  left: 107px;
-}
-
-.candle:nth-child(4) {
-  left: 132px;
-}
-
-.candle:nth-child(5) {
-  left: 164px;
-}
-
-/* Flame */
-.flame {
-  position: absolute;
-  top: -25px;
-  left: 50%;
-  width: 13px;
-  height: 21px;
-  transform: translateX(-50%);
-  border-radius: 50% 50% 50% 50%;
-  background: #ffd166;
-  box-shadow:
-    0 0 8px #ffd166,
-    0 0 18px #ff9f1c,
-    0 0 30px rgba(255,159,28,0.7);
-  animation: flameDance 0.7s infinite alternate ease-in-out;
-}
-
-@keyframes flameDance {
-  from {
-    transform: translateX(-50%) scale(1) rotate(-3deg);
+@media (max-width: 768px) {
+  .welcome-content h1 {
+    font-size: clamp(50px, 12vw, 85px);
   }
 
-  to {
-    transform: translateX(-50%) scale(1.15) rotate(3deg);
-  }
-}
-
-/* Cake glow */
-.cake-section::before {
-  content: "";
-  position: absolute;
-  width: 280px;
-  height: 180px;
-  left: 50%;
-  top: 100px;
-  transform: translateX(-50%);
-  background: radial-gradient(
-    circle,
-    rgba(255,105,180,0.18),
-    transparent 70%
-  );
-  pointer-events: none;
-}
-
-/* Wish button */
-#wishBtn {
-  position: relative;
-  margin-top: 20px;
-  padding: 14px 28px;
-  border: none;
-  border-radius: 50px;
-  background: linear-gradient(
-    135deg,
-    #ff5c9a,
-    #c77dff
-  );
-  color: white;
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  cursor: pointer;
-  box-shadow:
-    0 8px 25px rgba(255,92,154,0.35);
-  transition: 0.3s ease;
-  overflow: hidden;
-}
-
-#wishBtn:hover {
-  transform: translateY(-3px) scale(1.04);
-  box-shadow:
-    0 12px 35px rgba(255,92,154,0.5);
-}
-
-#wishBtn:active {
-  transform: scale(0.94);
-}
-
-/* Wish message */
-#wishMessage {
-  opacity: 0;
-  transform: translateY(15px) scale(0.95);
-  transition: all 0.7s ease;
-  margin: 20px auto 0;
-  max-width: 500px;
-}
-
-#wishMessage.show {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-  .cake {
-    transform: scale(0.9);
-    margin-top: 30px;
+  .enter-btn {
+    padding: 12px 24px;
+    font-size: 13px;
   }
 
-  .cake-section {
-    padding: 60px 15px;
-  }
-}
-
-/* =========================
-   PREMIUM FINAL MESSAGE
-========================= */
-
-.message-section {
-  position: relative;
-  padding: 100px 20px 80px;
-  text-align: center;
-}
-
-.message-card {
-  position: relative;
-  max-width: 700px;
-  margin: auto;
-  padding: 45px 30px;
-
-  border-radius: 30px;
-
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-
-  box-shadow:
-    0 20px 60px rgba(0, 0, 0, 0.25),
-    0 0 40px rgba(255, 105, 180, 0.12);
-
-  overflow: hidden;
-}
-
-/* glowing border */
-.message-card::before {
-  content: "";
-  position: absolute;
-  inset: -2px;
-
-  border-radius: 32px;
-
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255, 105, 180, 0.5),
-    transparent,
-    rgba(199, 125, 255, 0.5),
-    transparent
-  );
-
-  z-index: -1;
-  animation: messageGlow 5s linear infinite;
-}
-
-@keyframes messageGlow {
-  0% {
-    transform: translateX(-60%);
+  .hero h2 {
+    font-size: clamp(45px, 9vw, 75px);
   }
 
-  100% {
-    transform: translateX(60%);
-  }
-}
-
-.message-card h2 {
-  margin-bottom: 22px;
-
-  font-size: clamp(28px, 6vw, 46px);
-
-  font-family: "Dancing Script", cursive;
-
-  background: linear-gradient(
-    90deg,
-    #ff8fbd,
-    #ffffff,
-    #d8a4ff
-  );
-
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  animation: titleShine 4s ease-in-out infinite;
-}
-
-@keyframes titleShine {
-  0%, 100% {
-    filter: brightness(1);
+  .countdown-box {
+    padding: 25px 15px;
   }
 
-  50% {
-    filter: brightness(1.5);
-  }
-}
-
-.message-card p {
-  max-width: 560px;
-  margin: auto;
-
-  color: rgba(255,255,255,0.88);
-
-  font-size: 16px;
-  line-height: 1.9;
-}
-
-/* Big heart */
-.final-heart {
-  display: block;
-  margin: 25px auto 5px;
-
-  font-size: 45px;
-
-  animation:
-    heartBeat 1.5s infinite,
-    heartGlow 2s infinite alternate;
-}
-
-@keyframes heartBeat {
-  0%, 100% {
-    transform: scale(1);
+  .countdown {
+    gap: 10px;
   }
 
-  15% {
-    transform: scale(1.18);
+  .time-box {
+    min-width: 70px;
+    padding: 10px 8px;
   }
 
-  30% {
-    transform: scale(1);
+  .time-box span {
+    font-size: 28px;
   }
 
-  45% {
-    transform: scale(1.12);
-  }
-}
-
-@keyframes heartGlow {
-  from {
-    filter: drop-shadow(
-      0 0 5px rgba(255, 80, 150, 0.4)
-    );
+  .photo-slider {
+    width: 95%;
   }
 
-  to {
-    filter: drop-shadow(
-      0 0 25px rgba(255, 80, 150, 0.9)
-    );
-  }
-}
-
-/* little stars */
-.message-stars {
-  margin-top: 25px;
-
-  font-size: 18px;
-  letter-spacing: 12px;
-
-  opacity: 0.8;
-
-  animation: starFloat 3s ease-in-out infinite;
-}
-
-@keyframes starFloat {
-  0%, 100% {
-    transform: translateY(0);
+  .slider-btn.prev {
+    left: 10px;
   }
 
-  50% {
-    transform: translateY(-8px);
+  .slider-btn.next {
+    right: 10px;
   }
-}
 
-/* Footer */
-footer {
-  position: relative;
-  padding: 25px 15px 35px;
-
-  text-align: center;
-
-  color: rgba(255,255,255,0.55);
-
-  font-size: 13px;
-}
-
-footer span {
-  color: #ff82b5;
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-
-  .message-section {
-    padding: 75px 15px 60px;
+  .slider-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 24px;
+    line-height: 30px;
   }
 
   .message-card {
-    padding: 35px 20px;
-    border-radius: 24px;
+    padding: 40px 25px;
   }
 
-  .message-card p {
-    font-size: 15px;
-    line-height: 1.8;
-  }
-
-  .final-heart {
-    font-size: 40px;
-  }
-}
-
-/* =========================
-   CAKE OVERLAP FIX
-========================= */
-
-.cake-section {
-  position: relative;
-  overflow: hidden;
-}
-
-.cake-section .section-heading {
-  position: relative;
-  z-index: 10;
-}
-
-.cake-section .cake-area {
-  position: relative;
-  z-index: 5;
-  margin-top: 100px;
-  min-height: 360px;
-}
-
-/* Restore original cake structure */
-.cake-section .cake {
-  position: relative;
-  width: 280px;
-  max-width: 100%;
-  margin: 0 auto;
-  padding-top: 80px;
-  height: auto;
-}
-
-/* Candles stay above cake, NOT heading */
-.cake-section .candles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 65px;
-
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  gap: 25px;
-
-  z-index: 10;
-}
-
-.cake-section .candle {
-  position: relative;
-
-  left: auto !important;
-  bottom: auto !important;
-
-  width: 12px;
-  height: 65px;
-
-  flex: 0 0 12px;
-}
-
-/* Flames stay attached to candles */
-.cake-section .flame {
-  position: absolute;
-  left: -1px;
-  top: -23px;
-}
-
-/* Remove the extra fake cake layers */
-.cake-section .cake::before,
-.cake-section .cake::after {
-  content: none !important;
-}
-
-/* Cake button stays below */
-.cake-section .wish-btn,
-.cake-section #wishBtn {
-  position: relative;
-  z-index: 20;
-  margin-top: 25px;
-}
-
-/* Message below button */
-.cake-section .wish-message,
-.cake-section #wishMessage {
-  position: relative;
-  z-index: 20;
-}
-
-/* Mobile fix */
-@media (max-width: 600px) {
-  .cake-section {
-    padding-top: 80px;
-  }
-
-  .cake-section .cake-area {
-    margin-top: 80px;
-    min-height: 350px;
-  }
-
-  .cake-section .candles {
-    gap: 18px;
+  .music-btn {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
   }
 }
