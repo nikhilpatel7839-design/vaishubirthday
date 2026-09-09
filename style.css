@@ -1540,3 +1540,198 @@ footer span {
     font-size: 20px;
   }
 }
+
+/* =========================
+   PREMIUM BIRTHDAY CAKE
+========================= */
+
+.cake-section {
+  position: relative;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.cake {
+  position: relative;
+  margin: 45px auto 30px;
+  width: 230px;
+  height: 145px;
+  filter: drop-shadow(0 15px 25px rgba(255, 105, 180, 0.3));
+}
+
+/* Cake layers */
+.cake::before {
+  content: "";
+  position: absolute;
+  left: 15px;
+  bottom: 0;
+  width: 200px;
+  height: 75px;
+  border-radius: 15px 15px 25px 25px;
+  background: linear-gradient(
+    to bottom,
+    #ffb6d5,
+    #ff7eb3
+  );
+  box-shadow:
+    inset 0 -12px 0 rgba(255,255,255,0.15),
+    0 12px 25px rgba(255,105,180,0.3);
+}
+
+/* Cream layer */
+.cake::after {
+  content: "♡  ♡  ♡  ♡  ♡";
+  position: absolute;
+  left: 18px;
+  bottom: 58px;
+  width: 194px;
+  height: 25px;
+  padding-top: 5px;
+  border-radius: 15px;
+  background: #fff4fa;
+  color: #ff5c9a;
+  font-size: 15px;
+  letter-spacing: 7px;
+  box-shadow: 0 4px 10px rgba(255,255,255,0.35);
+}
+
+/* Candles */
+.candle {
+  position: absolute;
+  bottom: 72px;
+  width: 16px;
+  height: 55px;
+  border-radius: 5px;
+  background: repeating-linear-gradient(
+    45deg,
+    #fff,
+    #fff 6px,
+    #ff72a8 6px,
+    #ff72a8 11px
+  );
+  z-index: 5;
+  box-shadow: 0 4px 10px rgba(255,105,180,0.25);
+}
+
+.candle:nth-child(1) {
+  left: 50px;
+}
+
+.candle:nth-child(2) {
+  left: 82px;
+}
+
+.candle:nth-child(3) {
+  left: 107px;
+}
+
+.candle:nth-child(4) {
+  left: 132px;
+}
+
+.candle:nth-child(5) {
+  left: 164px;
+}
+
+/* Flame */
+.flame {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  width: 13px;
+  height: 21px;
+  transform: translateX(-50%);
+  border-radius: 50% 50% 50% 50%;
+  background: #ffd166;
+  box-shadow:
+    0 0 8px #ffd166,
+    0 0 18px #ff9f1c,
+    0 0 30px rgba(255,159,28,0.7);
+  animation: flameDance 0.7s infinite alternate ease-in-out;
+}
+
+@keyframes flameDance {
+  from {
+    transform: translateX(-50%) scale(1) rotate(-3deg);
+  }
+
+  to {
+    transform: translateX(-50%) scale(1.15) rotate(3deg);
+  }
+}
+
+/* Cake glow */
+.cake-section::before {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 180px;
+  left: 50%;
+  top: 100px;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    circle,
+    rgba(255,105,180,0.18),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* Wish button */
+#wishBtn {
+  position: relative;
+  margin-top: 20px;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(
+    135deg,
+    #ff5c9a,
+    #c77dff
+  );
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  box-shadow:
+    0 8px 25px rgba(255,92,154,0.35);
+  transition: 0.3s ease;
+  overflow: hidden;
+}
+
+#wishBtn:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow:
+    0 12px 35px rgba(255,92,154,0.5);
+}
+
+#wishBtn:active {
+  transform: scale(0.94);
+}
+
+/* Wish message */
+#wishMessage {
+  opacity: 0;
+  transform: translateY(15px) scale(0.95);
+  transition: all 0.7s ease;
+  margin: 20px auto 0;
+  max-width: 500px;
+}
+
+#wishMessage.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .cake {
+    transform: scale(0.9);
+    margin-top: 30px;
+  }
+
+  .cake-section {
+    padding: 60px 15px;
+  }
+}
