@@ -1,1 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Happy Birthday Vaishu ❤️</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Opening Screen -->
+  <div id="welcomeScreen" class="welcome-screen">
+
+    <div class="stars"></div>
+    <div id="balloonContainer"></div>
+    <div id="heartContainer"></div>
+    <div id="sparkleContainer"></div>
+
+    <div class="welcome-content">
+
+      <div class="tiny-line">A little surprise for you</div>
+
+      <div class="welcome-heart">♡</div>
+
+      <h1>
+        Hey,<br>
+        <span>Vaishu</span>
+      </h1>
+
+      <p class="welcome-message">
+        Some people make the world brighter<br>
+        simply by being a part of it. ❤️
+        <br><br>
+        Today is all about celebrating<br>
+        <strong>someone truly special.</strong>
+      </p>
+
+      <p class="ready-text">
+        I made something just for you...
+      </p>
+
+      <button id="enterBtn" class="enter-btn">
+        <span>Enter</span>
+        <b>♡</b>
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- Main Website -->
+  <div id="mainSite" class="main-site">
+
+    <!-- Background effects -->
+    <div id="mainHearts"></div>
+    <div id="mainSparkles"></div>
+
+    <!-- Hero -->
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <p class="eyebrow">♡ YOUR SPECIAL DAY ♡</p>
+
+        <h2>
+          Happy Birthday
+          <span>Vaishu</span>
+        </h2>
+
+        <p class="hero-text">
+          A beautiful day for a beautiful soul.
+        </p>
+
+        <!-- Countdown -->
+        <div class="countdown-box">
+
+          <p class="countdown-title">
+            Counting down to your special day ✨
+          </p>
+
+          <div class="countdown">
+
+            <div class="time-box">
+              <span id="days">00</span>
+              <small>Days</small>
+            </div>
+
+            <div class="colon">:</div>
+
+            <div class="time-box">
+              <span id="hours">00</span>
+              <small>Hours</small>
+            </div>
+
+            <div class="colon">:</div>
+
+            <div class="time-box">
+              <span id="minutes">00</span>
+              <small>Minutes</small>
+            </div>
+
+            <div class="colon">:</div>
+
+            <div class="time-box">
+              <span id="seconds">00</span>
+              <small>Seconds</small>
+            </div>
+
+          </div>
+
+          <p class="date-text">
+            October 10, 2026 ❤️
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Memories -->
+    <section class="memories-section">
+
+      <div class="section-heading">
+        <span>♡ MEMORIES ♡</span>
+        <h2>Little moments,<br><em>big memories.</em></h2>
+        <p>
+          A few beautiful moments that deserve to be remembered.
+        </p>
+      </div>
+
+
+      <div class="photo-slider">
+
+        <button class="slider-btn prev" id="prevBtn">‹</button>
+
+        <div class="photo-track" id="photoTrack">
+
+          <!-- Photo 1 -->
+          <div class="photo-card active">
+            <div class="photo-frame">
+              <img src="images/vaishu1.jpg" alt="Vaishu memory"
+                   onerror="this.style.display='none'; this.parentElement.classList.add('placeholder');">
+              <div class="photo-placeholder">
+                <span>♡</span>
+                <p>Your beautiful photo</p>
+              </div>
+            </div>
+
+            <p class="photo-caption">
+              “Your smile makes everything a little brighter.” 💗
+            </p>
+          </div>
+
+
+          <!-- Photo 2 -->
+          <div class="photo-card">
+            <div class="photo-frame">
+              <img src="images/vaishu2.jpg" alt="Vaishu memory"
+                   onerror="this.style.display='none'; this.parentElement.classList.add('placeholder');">
+              <div class="photo-placeholder">
+                <span>✦</span>
+                <p>A special memory</p>
+              </div>
+            </div>
+
+            <p class="photo-caption">
+              “Some moments are simply unforgettable.” ✨
+            </p>
+          </div>
+
+
+          <!-- Photo 3 -->
+          <div class="photo-card">
+            <div class="photo-frame">
+              <img src="images/vaishu3.jpg" alt="Vaishu memory"
+                   onerror="this.style.display='none'; this.parentElement.classList.add('placeholder');">
+              <div class="photo-placeholder">
+                <span>♡</span>
+                <p>A precious moment</p>
+              </div>
+            </div>
+
+            <p class="photo-caption">
+              “Keep that beautiful smile forever.” ❤️
+            </p>
+          </div>
+
+        </div>
+
+        <button class="slider-btn next" id="nextBtn">›</button>
+
+      </div>
+
+      <div class="slider-dots" id="sliderDots"></div>
+
+    </section>
+
+
+    <!-- Cake -->
+    <section class="cake-section">
+
+      <div class="section-heading">
+        <span>♡ MAKE A WISH ♡</span>
+        <h2>It's time for<br><em>the birthday cake.</em></h2>
+      </div>
+
+
+      <div class="cake-area">
+
+        <div class="sparkle-ring"></div>
+
+        <div class="cake">
+
+          <div class="candles">
+
+            <div class="candle">
+              <div class="flame"></div>
+            </div>
+
+            <div class="candle">
+              <div class="flame"></div>
+            </div>
+
+            <div class="candle">
+              <div class="flame"></div>
+            </div>
+
+            <div class="candle">
+              <div class="flame"></div>
+            </div>
+
+            <div class="candle">
+              <div class="flame"></div>
+            </div>
+
+          </div>
+
+          <div class="cake-top">
+            <div class="cream"></div>
+            <span>Happy Birthday</span>
+            <strong>Vaishu ♡</strong>
+          </div>
+
+          <div class="cake-body">
+            <div class="drip"></div>
+            <div class="cake-line"></div>
+            <div class="cake-line"></div>
+          </div>
+
+          <div class="cake-base"></div>
+
+        </div>
+
+        <button id="wishBtn" class="wish-btn">
+          Make a Wish ✨
+        </button>
+
+        <p id="wishMessage" class="wish-message">
+          Close your eyes, make a wish... and let it come true. ❤️
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- Final Message -->
+    <section class="message-section">
+
+      <div class="message-card">
+
+        <div class="message-icon">♡</div>
+
+        <p class="message-small">
+          A message from the heart
+        </p>
+
+        <h2>
+          For you,<br>
+          <em>Vaishu.</em>
+        </h2>
+
+        <p class="final-message">
+          On your special day, I just want you to know
+          how amazing you are.
+          <br><br>
+          May your life always be filled with happiness,
+          beautiful memories, genuine smiles and
+          countless reasons to keep shining.
+          <br><br>
+          Never stop being the wonderful person you are.
+          ❤️
+        </p>
+
+        <div class="final-heart">♡</div>
+
+        <p class="birthday-wish">
+          Happy Birthday, Vaishu! 🎂
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <footer>
+      Made with <span>♥</span> specially for Vaishu
+    </footer>
+
+  </div>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
