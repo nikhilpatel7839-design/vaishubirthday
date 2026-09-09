@@ -1941,3 +1941,106 @@ footer span {
     font-size: 40px;
   }
 }
+
+/* =========================
+   CAKE OVERLAP FIX
+========================= */
+
+.cake-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.cake-section .section-heading {
+  position: relative;
+  z-index: 10;
+}
+
+.cake-section .cake-area {
+  position: relative;
+  z-index: 5;
+  margin-top: 100px;
+  min-height: 360px;
+}
+
+/* Restore original cake structure */
+.cake-section .cake {
+  position: relative;
+  width: 280px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding-top: 80px;
+  height: auto;
+}
+
+/* Candles stay above cake, NOT heading */
+.cake-section .candles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 65px;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 25px;
+
+  z-index: 10;
+}
+
+.cake-section .candle {
+  position: relative;
+
+  left: auto !important;
+  bottom: auto !important;
+
+  width: 12px;
+  height: 65px;
+
+  flex: 0 0 12px;
+}
+
+/* Flames stay attached to candles */
+.cake-section .flame {
+  position: absolute;
+  left: -1px;
+  top: -23px;
+}
+
+/* Remove the extra fake cake layers */
+.cake-section .cake::before,
+.cake-section .cake::after {
+  content: none !important;
+}
+
+/* Cake button stays below */
+.cake-section .wish-btn,
+.cake-section #wishBtn {
+  position: relative;
+  z-index: 20;
+  margin-top: 25px;
+}
+
+/* Message below button */
+.cake-section .wish-message,
+.cake-section #wishMessage {
+  position: relative;
+  z-index: 20;
+}
+
+/* Mobile fix */
+@media (max-width: 600px) {
+  .cake-section {
+    padding-top: 80px;
+  }
+
+  .cake-section .cake-area {
+    margin-top: 80px;
+    min-height: 350px;
+  }
+
+  .cake-section .candles {
+    gap: 18px;
+  }
+}
