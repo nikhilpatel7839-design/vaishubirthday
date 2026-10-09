@@ -257,6 +257,81 @@
   color: #75465b !important;
   line-height: 1.9 !important;
 }
+
+  
+/* Natural photo gallery */
+.photo-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 38px;
+  width: 100%;
+  max-width: 520px;
+  margin: 25px auto;
+  padding: 0 14px;
+  box-sizing: border-box;
+}
+
+.memory-card {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+}
+
+.memory-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 650px;
+  object-fit: contain;
+  object-position: center;
+  border: none;
+  border-radius: 22px;
+  background: transparent;
+  box-shadow: 0 8px 28px rgba(255, 130, 195, 0.16);
+}
+
+.photo-caption {
+  width: 100%;
+  margin: 15px 0 0;
+  padding: 0 8px;
+  box-sizing: border-box;
+  text-align: center;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.photo-caption h3 {
+  margin: 0 0 10px;
+  color: #ffb4d8;
+  font-size: clamp(20px, 5vw, 26px);
+  font-family: "Cormorant Garamond", serif;
+}
+
+.photo-caption p {
+  margin: 0;
+  color: #f5ddec;
+  font-size: 15px;
+  line-height: 1.8;
+  font-family: "Poppins", sans-serif;
+}
+
+@media (max-width: 420px) {
+  .photo-gallery {
+    padding: 0 8px;
+    gap: 30px;
+  }
+
+  .memory-photo {
+    border-radius: 18px;
+  }
+}
 </style>
 </head>
 
@@ -351,35 +426,44 @@
       <p>A few beautiful moments that deserve to be remembered.</p>
     </div>
 
-    <!-- Three photos in one horizontal row -->
-    <div class="photo-slider">
-      <div class="photo-track" id="photoTrack">
+    
+<!-- Memories: two photos with their own wishes -->
+<div class="photo-gallery">
 
-    <div class="photo-card">
-      <div class="photo-frame">
-        <img src="IMG_20261009_071957_634.jpg
-          " alt="Vaishu memory 1">
-      </div>
-      <div class="photo-caption">
-        <h3>✨ A Beautiful Smile</h3>
-        <p>Your smile makes everything brighter. Keep smiling and spreading happiness wherever you go. 💗</p>
-      </div>
+  <div class="memory-card">
+    <img
+      src="IMG_20261009_071957_634.jpg"
+      alt="Vaishu memory 1"
+      class="memory-photo"
+    />
+    <div class="photo-caption">
+      <h3>✨ A Beautiful Smile 💗</h3>
+      <p>
+        Your smile makes everything brighter.
+        Keep smiling and spreading happiness wherever you go. 💕
+      </p>
     </div>
-
-    <div class="photo-card">
-      <div class="photo-frame">
-        <img src="IMG_20261009_071957_455.jpg
-          " alt="Vaishu memory 2">
-      </div>
-      <div class="photo-caption">
-        <h3>🌸 Stay Beautiful, Always</h3>
-        <p>May your life be filled with beautiful moments, genuine people, endless laughter and dreams that come true. ❤️</p>
-      </div>
-
   </div>
-          </div>
 
-    <!-- Birthday wish under all three photos -->
+  <div class="memory-card">
+    <img
+      src="IMG_20261009_071957_455.jpg"
+      alt="Vaishu memory 2"
+      class="memory-photo second-photo"
+    />
+    <div class="photo-caption">
+      <h3>🌸 Stay Beautiful, Always 🌸</h3>
+      <p>
+        May your life be filled with beautiful moments,
+        genuine smiles, endless laughter and dreams
+        that come true. ❤️
+      </p>
+    </div>
+  </div>
+
+</div>
+
+    <!-- Birthday wish under all two photos -->
     <div class="birthday-wish-gallery">
       <span class="wish-flower">✧ ♡ ✧</span>
 
