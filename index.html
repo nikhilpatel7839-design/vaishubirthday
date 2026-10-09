@@ -11,6 +11,93 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Vaishu's horizontal birthday photo gallery */
+    .memories-section .photo-slider {
+      width: min(100% - 28px, 980px) !important;
+      margin: 26px auto 0 !important;
+      display: block !important;
+      position: relative !important;
+      overflow: visible !important;
+    }
+    .memories-section .photo-track {
+      display: grid !important;
+      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+      gap: clamp(8px, 2vw, 18px) !important;
+      width: 100% !important;
+      transform: none !important;
+      transition: none !important;
+      overflow: visible !important;
+    }
+    .memories-section .photo-card,
+    .memories-section .photo-card.active {
+      display: block !important;
+      width: 100% !important;
+      min-width: 0 !important;
+      max-width: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      transform: none !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      box-sizing: border-box !important;
+      background: rgba(255,255,255,.7) !important;
+      border: 1px solid rgba(219, 132, 165, .28) !important;
+      border-radius: 15px !important;
+      overflow: hidden !important;
+      box-shadow: 0 7px 20px rgba(104, 40, 73, .10) !important;
+    }
+    .memories-section .photo-frame {
+      width: 100% !important;
+      height: auto !important;
+      aspect-ratio: 3 / 4 !important;
+      overflow: hidden !important;
+      border-radius: 0 !important;
+      background: #f9eaf0 !important;
+      position: relative !important;
+    }
+    .memories-section .photo-frame img {
+      display: block !important;
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      object-position: center !important;
+      border-radius: 0 !important;
+      transform: none !important;
+    }
+    .memories-section .photo-placeholder { display: none !important; }
+    .memories-section .photo-card .photo-caption { display: none !important; }
+    .memories-section .slider-btn,
+    .memories-section .slider-dots { display: none !important; }
+    .birthday-wish-gallery {
+      width: min(100% - 32px, 780px);
+      margin: 25px auto 5px;
+      padding: 22px 18px;
+      text-align: center;
+      border: 1px solid rgba(219, 132, 165, .30);
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(255,247,250,.96), rgba(255,235,243,.88));
+      box-shadow: 0 8px 24px rgba(104, 40, 73, .08);
+      box-sizing: border-box;
+    }
+    .birthday-wish-gallery .wish-flower {
+      display: block; font-size: 20px; letter-spacing: 7px; margin-bottom: 7px;
+    }
+    .birthday-wish-gallery h3 {
+      margin: 0 0 9px; color: #a74470; font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(23px, 4vw, 31px); font-weight: 600; line-height: 1.15;
+    }
+    .birthday-wish-gallery p {
+      margin: 0; color: #75465b; font-size: clamp(12px, 2vw, 15px); line-height: 1.8;
+    }
+    @media (max-width: 420px) {
+      .memories-section .photo-slider { width: calc(100% - 22px) !important; }
+      .memories-section .photo-track { gap: 7px !important; }
+      .memories-section .photo-card, .memories-section .photo-card.active { border-radius: 11px !important; }
+      .birthday-wish-gallery { padding: 18px 13px; }
+    }
+  </style>
+
 </head>
 
 <body>
@@ -203,6 +290,14 @@
 
       <div class="slider-dots" id="sliderDots"></div>
 
+      <div class="birthday-wish-gallery">
+        <span class="wish-flower">✧ ♡ ✧</span>
+        <h3>Happy Birthday, Vaishu! 💗</h3>
+        <p>May your beautiful smile always shine, your heart stay full of happiness,
+        and every new day bring you sweet memories, endless love and little reasons to smile.
+        You deserve all the beautiful things life has to offer. ✨</p>
+      </div>
+
     </section>
 
 
@@ -332,3 +427,4 @@
 
 </body>
 </html>
+
