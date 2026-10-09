@@ -204,6 +204,59 @@
 .birthday-wish-gallery {
   display: none !important;
 }
+
+/* Remove the white background behind photos */
+.memories-section .photo-slider,
+.memories-section .photo-track,
+.memories-section .photo-card,
+.memories-section .photo-frame {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Make photos blend naturally with the page */
+.memories-section .photo-card {
+  border: none !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  border-radius: 22px !important;
+}
+
+.memories-section .photo-frame {
+  border: none !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  border-radius: 22px !important;
+}
+
+.memories-section .photo-frame img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+  border-radius: 22px !important;
+}
+
+/* One beautiful birthday message below both photos */
+.birthday-wish-gallery {
+  display: block !important;
+  background: linear-gradient(135deg, #fff0f6, #fce4f1) !important;
+  border: 1px solid rgba(255, 182, 213, 0.6) !important;
+  border-radius: 24px !important;
+  padding: 24px 18px !important;
+  margin: 28px auto !important;
+  text-align: center !important;
+  box-shadow: 0 8px 25px rgba(255, 150, 200, 0.15) !important;
+}
+
+.birthday-wish-gallery h3 {
+  color: #a74470 !important;
+}
+
+.birthday-wish-gallery p {
+  color: #75465b !important;
+  line-height: 1.9 !important;
+}
 </style>
 </head>
 
