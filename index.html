@@ -1,430 +1,364 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Vaishu ❤️</title>
 
-  <title>Happy Birthday Vaishu ❤️</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    /* Vaishu's horizontal birthday photo gallery */
-    .memories-section .photo-slider {
-      width: min(100% - 28px, 980px) !important;
-      margin: 26px auto 0 !important;
-      display: block !important;
-      position: relative !important;
-      overflow: visible !important;
-    }
-    .memories-section .photo-track {
-      display: grid !important;
-      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-      gap: clamp(8px, 2vw, 18px) !important;
-      width: 100% !important;
-      transform: none !important;
-      transition: none !important;
-      overflow: visible !important;
-    }
-    .memories-section .photo-card,
-    .memories-section .photo-card.active {
-      display: block !important;
-      width: 100% !important;
-      min-width: 0 !important;
-      max-width: none !important;
-      margin: 0 !important;
-      padding: 0 !important;
-      transform: none !important;
-      opacity: 1 !important;
-      visibility: visible !important;
-      box-sizing: border-box !important;
-      background: rgba(255,255,255,.7) !important;
-      border: 1px solid rgba(219, 132, 165, .28) !important;
-      border-radius: 15px !important;
-      overflow: hidden !important;
-      box-shadow: 0 7px 20px rgba(104, 40, 73, .10) !important;
-    }
-    .memories-section .photo-frame {
-      width: 100% !important;
-      height: auto !important;
-      aspect-ratio: 3 / 4 !important;
-      overflow: hidden !important;
-      border-radius: 0 !important;
-      background: #f9eaf0 !important;
-      position: relative !important;
-    }
-    .memories-section .photo-frame img {
-      display: block !important;
-      width: 100% !important;
-      height: 100% !important;
-      object-fit: cover !important;
-      object-position: center !important;
-      border-radius: 0 !important;
-      transform: none !important;
-    }
-    .memories-section .photo-placeholder { display: none !important; }
-    .memories-section .photo-card .photo-caption { display: none !important; }
-    .memories-section .slider-btn,
-    .memories-section .slider-dots { display: none !important; }
-    .birthday-wish-gallery {
-      width: min(100% - 32px, 780px);
-      margin: 25px auto 5px;
-      padding: 22px 18px;
-      text-align: center;
-      border: 1px solid rgba(219, 132, 165, .30);
-      border-radius: 18px;
-      background: linear-gradient(135deg, rgba(255,247,250,.96), rgba(255,235,243,.88));
-      box-shadow: 0 8px 24px rgba(104, 40, 73, .08);
-      box-sizing: border-box;
-    }
-    .birthday-wish-gallery .wish-flower {
-      display: block; font-size: 20px; letter-spacing: 7px; margin-bottom: 7px;
-    }
-    .birthday-wish-gallery h3 {
-      margin: 0 0 9px; color: #a74470; font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(23px, 4vw, 31px); font-weight: 600; line-height: 1.15;
-    }
-    .birthday-wish-gallery p {
-      margin: 0; color: #75465b; font-size: clamp(12px, 2vw, 15px); line-height: 1.8;
-    }
-    @media (max-width: 420px) {
-      .memories-section .photo-slider { width: calc(100% - 22px) !important; }
-      .memories-section .photo-track { gap: 7px !important; }
-      .memories-section .photo-card, .memories-section .photo-card.active { border-radius: 11px !important; }
-      .birthday-wish-gallery { padding: 18px 13px; }
-    }
-  </style>
+<style>
+/* Horizontal photo gallery */
+.memories-section .photo-slider {
+  width: min(100% - 28px, 980px);
+  margin: 26px auto;
+  display: block;
+  overflow: visible;
+}
 
+.memories-section .photo-track {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(8px, 2vw, 18px);
+  width: 100%;
+  height: auto;
+  transform: none !important;
+  transition: none !important;
+  align-items: start;
+}
+
+.memories-section .photo-card,
+.memories-section .photo-card.active {
+  display: block !important;
+  position: relative !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  box-sizing: border-box;
+  background: rgba(255,255,255,.85);
+  border: 1px solid rgba(219,132,165,.3);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 7px 20px rgba(104,40,73,.10);
+}
+
+.memories-section .photo-frame {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: #f9eaf0;
+  position: relative;
+}
+
+.memories-section .photo-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: none !important;
+}
+
+.memories-section .photo-placeholder {
+  display: none !important;
+}
+
+.memories-section .photo-card .photo-caption {
+  display: none !important;
+}
+
+.memories-section .slider-btn,
+.memories-section .slider-dots {
+  display: none !important;
+}
+
+/* Birthday wish below photos */
+.birthday-wish-gallery {
+  width: min(100% - 32px, 780px);
+  margin: 25px auto 10px;
+  padding: 24px 18px;
+  text-align: center;
+  border: 1px solid rgba(219,132,165,.35);
+  border-radius: 20px;
+  background: linear-gradient(135deg, #fff7fa, #ffebf3);
+  box-shadow: 0 8px 24px rgba(104,40,73,.08);
+  box-sizing: border-box;
+}
+
+.birthday-wish-gallery .wish-flower {
+  display: block;
+  font-size: 21px;
+  letter-spacing: 7px;
+  margin-bottom: 8px;
+  color: #c15d8b;
+}
+
+.birthday-wish-gallery h3 {
+  margin: 0 0 12px;
+  color: #a74470;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(24px, 4vw, 34px);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.birthday-wish-gallery p {
+  margin: 0;
+  color: #75465b;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(12px, 2vw, 15px);
+  line-height: 1.9;
+}
+
+@media (max-width: 420px) {
+  .memories-section .photo-slider {
+    width: calc(100% - 22px);
+  }
+
+  .memories-section .photo-track {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 7px;
+  }
+
+  .memories-section .photo-card,
+  .memories-section .photo-card.active {
+    border-radius: 10px;
+  }
+
+  .birthday-wish-gallery {
+    padding: 19px 13px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- Opening Screen -->
-  <div id="welcomeScreen" class="welcome-screen">
+<!-- Welcome Screen -->
+<div id="welcomeScreen" class="welcome-screen">
+  <div class="stars"></div>
+  <div id="balloonContainer"></div>
+  <div id="heartContainer"></div>
+  <div id="sparkleContainer"></div>
 
-    <div class="stars"></div>
-    <div id="balloonContainer"></div>
-    <div id="heartContainer"></div>
-    <div id="sparkleContainer"></div>
+  <div class="welcome-content">
+    <div class="tiny-line">A little surprise for you</div>
+    <div class="welcome-heart">♡</div>
 
-    <div class="welcome-content">
+    <h1>Hey,<br><span>Vaishu</span></h1>
 
-      <div class="tiny-line">A little surprise for you</div>
+    <p class="welcome-message">
+      Some people make the world brighter<br>
+      simply by being a part of it. ❤️
+      <br><br>
+      Today is all about celebrating<br>
+      <strong>someone truly special.</strong>
+    </p>
 
-      <div class="welcome-heart">♡</div>
+    <p class="ready-text">I made something just for you...</p>
 
-      <h1>
-        Hey,<br>
+    <button id="enterBtn" class="enter-btn">
+      <span>Enter</span>
+      <b>♡</b>
+    </button>
+  </div>
+</div>
+
+<!-- Main Website -->
+<div id="mainSite" class="main-site">
+
+  <div id="mainHearts"></div>
+  <div id="mainSparkles"></div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">♡ YOUR SPECIAL DAY ♡</p>
+
+      <h2>
+        Happy Birthday
         <span>Vaishu</span>
-      </h1>
+      </h2>
 
-      <p class="welcome-message">
-        Some people make the world brighter<br>
-        simply by being a part of it. ❤️
-        <br><br>
-        Today is all about celebrating<br>
-        <strong>someone truly special.</strong>
-      </p>
+      <p class="hero-text">A beautiful day for a beautiful soul.</p>
 
-      <p class="ready-text">
-        I made something just for you...
-      </p>
+      <div class="countdown-box">
+        <p class="countdown-title">
+          Counting down to your special day ✨
+        </p>
 
-      <button id="enterBtn" class="enter-btn">
-        <span>Enter</span>
-        <b>♡</b>
-      </button>
+        <div class="countdown">
+          <div class="time-box">
+            <span id="days">00</span>
+            <small>Days</small>
+          </div>
+          <div class="colon">:</div>
+          <div class="time-box">
+            <span id="hours">00</span>
+            <small>Hours</small>
+          </div>
+          <div class="colon">:</div>
+          <div class="time-box">
+            <span id="minutes">00</span>
+            <small>Minutes</small>
+          </div>
+          <div class="colon">:</div>
+          <div class="time-box">
+            <span id="seconds">00</span>
+            <small>Seconds</small>
+          </div>
+        </div>
 
+        <p class="date-text">October 10, 2026 ❤️</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Memories -->
+  <section class="memories-section">
+
+    <div class="section-heading">
+      <span>♡ MEMORIES ♡</span>
+      <h2>Little moments,<br><em>big memories.</em></h2>
+      <p>A few beautiful moments that deserve to be remembered.</p>
     </div>
 
-  </div>
+    <!-- Three photos in one horizontal row -->
+    <div class="photo-slider">
+      <div class="photo-track" id="photoTrack">
 
-
-  <!-- Main Website -->
-  <div id="mainSite" class="main-site">
-
-    <!-- Background effects -->
-    <div id="mainHearts"></div>
-    <div id="mainSparkles"></div>
-
-    <!-- Hero -->
-    <section class="hero">
-
-      <div class="hero-content">
-
-        <p class="eyebrow">♡ YOUR SPECIAL DAY ♡</p>
-
-        <h2>
-          Happy Birthday
-          <span>Vaishu</span>
-        </h2>
-
-        <p class="hero-text">
-          A beautiful day for a beautiful soul.
-        </p>
-
-        <!-- Countdown -->
-        <div class="countdown-box">
-
-          <p class="countdown-title">
-            Counting down to your special day ✨
-          </p>
-
-          <div class="countdown">
-
-            <div class="time-box">
-              <span id="days">00</span>
-              <small>Days</small>
-            </div>
-
-            <div class="colon">:</div>
-
-            <div class="time-box">
-              <span id="hours">00</span>
-              <small>Hours</small>
-            </div>
-
-            <div class="colon">:</div>
-
-            <div class="time-box">
-              <span id="minutes">00</span>
-              <small>Minutes</small>
-            </div>
-
-            <div class="colon">:</div>
-
-            <div class="time-box">
-              <span id="seconds">00</span>
-              <small>Seconds</small>
-            </div>
-
+        <div class="photo-card">
+          <div class="photo-frame">
+            <img src="file_000000007334320808060c259a6f34c71.png"
+                 alt="Vaishu memory">
           </div>
+        </div>
 
-          <p class="date-text">
-            October 10, 2026 ❤️
-          </p>
+        <div class="photo-card">
+          <div class="photo-frame">
+            <img src="file_0000000013c08208a6b89fdae15f90a.png"
+                 alt="Vaishu memory">
+          </div>
+        </div>
 
+        <div class="photo-card">
+          <div class="photo-frame">
+            <img src="file_0000000075a08208a683f6e22ed7b8a8.png"
+                 alt="Vaishu memory">
+          </div>
         </div>
 
       </div>
+    </div>
 
-    </section>
+    <!-- Birthday wish under all three photos -->
+    <div class="birthday-wish-gallery">
+      <span class="wish-flower">✧ ♡ ✧</span>
 
+      <h3>Happy Birthday, Vaishu! 💗</h3>
 
-    <!-- Memories -->
-    <section class="memories-section">
+      <p>
+        May your beautiful smile always shine, your heart stay full
+        of happiness, and every new day bring you sweet memories,
+        endless love and little reasons to smile.
+        <br><br>
+        You deserve all the beautiful things life has to offer.
+        Keep smiling and keep shining, today and always. ✨❤️
+      </p>
+    </div>
 
-      <div class="section-heading">
-        <span>♡ MEMORIES ♡</span>
-        <h2>Little moments,<br><em>big memories.</em></h2>
-        <p>
-          A few beautiful moments that deserve to be remembered.
-        </p>
-      </div>
+  </section>
 
+  <!-- Cake -->
+  <section class="cake-section">
+    <div class="section-heading">
+      <span>♡ MAKE A WISH ♡</span>
+      <h2>It's time for<br><em>the birthday cake.</em></h2>
+    </div>
 
-      <div class="photo-slider">
+    <div class="cake-area">
+      <div class="sparkle-ring"></div>
 
-        <button class="slider-btn prev" id="prevBtn">‹</button>
-
-        <div class="photo-track" id="photoTrack">
-
-          <!-- Photo 1 -->
-          <div class="photo-card active">
-            <div class="photo-frame">
-              <img src="file_000000007334320808060c259a6f34c71.png" alt="Vaishu memory"
-                   onerror="this.style.display='none'; this.parentElement.classList.add('placeholder');">
-              <div class="photo-placeholder">
-                <span>♡</span>
-                <p>Your beautiful photo</p>
-              </div>
-            </div>
-
-            <p class="photo-caption">
-              “Your smile makes everything a little brighter.” 💗
-            </p>
-          </div>
-
-
-          <!-- Photo 2 -->
-          <div class="photo-card">
-            <div class="photo-frame">
-              <img src="file_0000000013c08208a6b89fdae15f90a.png" alt="Vaishu memory"
-                   onerror="this.style.display='none'; this.parentElement.classList.add('placeholder');">
-              <div class="photo-placeholder">
-                <span>✦</span>
-                <p>A special memory</p>
-              </div>
-            </div>
-
-            <p class="photo-caption">
-              “Some moments are simply unforgettable.” ✨
-            </p>
-          </div>
-
-
-          <!-- Photo 3 -->
-          <div class="photo-card">
-            <div class="photo-frame">
-              <img src="file_0000000075a08208a683f6e22ed7b8a8.png" alt="Vaishu memory"
-                   onerror="this.style.display='none'; this.parentElement.classList.add('placeholder');">
-              <div class="photo-placeholder">
-                <span>♡</span>
-                <p>A precious moment</p>
-              </div>
-            </div>
-
-            <p class="photo-caption">
-              “Keep that beautiful smile forever.” ❤️
-            </p>
-          </div>
-
+      <div class="cake">
+        <div class="candles">
+          <div class="candle"><div class="flame"></div></div>
+          <div class="candle"><div class="flame"></div></div>
+          <div class="candle"><div class="flame"></div></div>
+          <div class="candle"><div class="flame"></div></div>
+          <div class="candle"><div class="flame"></div></div>
         </div>
 
-        <button class="slider-btn next" id="nextBtn">›</button>
-
-      </div>
-
-      <div class="slider-dots" id="sliderDots"></div>
-
-      <div class="birthday-wish-gallery">
-        <span class="wish-flower">✧ ♡ ✧</span>
-        <h3>Happy Birthday, Vaishu! 💗</h3>
-        <p>May your beautiful smile always shine, your heart stay full of happiness,
-        and every new day bring you sweet memories, endless love and little reasons to smile.
-        You deserve all the beautiful things life has to offer. ✨</p>
-      </div>
-
-    </section>
-
-
-    <!-- Cake -->
-    <section class="cake-section">
-
-      <div class="section-heading">
-        <span>♡ MAKE A WISH ♡</span>
-        <h2>It's time for<br><em>the birthday cake.</em></h2>
-      </div>
-
-
-      <div class="cake-area">
-
-        <div class="sparkle-ring"></div>
-
-        <div class="cake">
-
-          <div class="candles">
-
-            <div class="candle">
-              <div class="flame"></div>
-            </div>
-
-            <div class="candle">
-              <div class="flame"></div>
-            </div>
-
-            <div class="candle">
-              <div class="flame"></div>
-            </div>
-
-            <div class="candle">
-              <div class="flame"></div>
-            </div>
-
-            <div class="candle">
-              <div class="flame"></div>
-            </div>
-
-          </div>
-
-          <div class="cake-top">
-            <div class="cream"></div>
-            <span>Happy Birthday</span>
-            <strong>Vaishu ♡</strong>
-          </div>
-
-          <div class="cake-body">
-            <div class="drip"></div>
-            <div class="cake-line"></div>
-            <div class="cake-line"></div>
-          </div>
-
-          <div class="cake-base"></div>
-
+        <div class="cake-top">
+          <div class="cream"></div>
+          <span>Happy Birthday</span>
+          <strong>Vaishu ♡</strong>
         </div>
 
-        <button id="wishBtn" class="wish-btn">
-          Make a Wish ✨
-        </button>
+        <div class="cake-body">
+          <div class="drip"></div>
+          <div class="cake-line"></div>
+          <div class="cake-line"></div>
+        </div>
 
-        <p id="wishMessage" class="wish-message">
-          Close your eyes, make a wish... and let it come true. ❤️
-        </p>
-
+        <div class="cake-base"></div>
       </div>
 
-    </section>
+      <button id="wishBtn" class="wish-btn">Make a Wish ✨</button>
 
+      <p id="wishMessage" class="wish-message">
+        Close your eyes, make a wish... and let it come true. ❤️
+      </p>
+    </div>
+  </section>
 
-    <!-- Final Message -->
-    <section class="message-section">
+  <!-- Final Message -->
+  <section class="message-section">
+    <div class="message-card">
+      <div class="message-icon">♡</div>
 
-      <div class="message-card">
+      <p class="message-small">A message from the heart</p>
 
-        <div class="message-icon">♡</div>
+      <h2>For you,<br><em>Vaishu.</em></h2>
 
-        <p class="message-small">
-          A message from the heart
-        </p>
+      <p class="final-message">
+        On your special day, I just want you to know
+        how amazing you are.
+        <br><br>
+        May your life always be filled with happiness,
+        beautiful memories, genuine smiles and
+        countless reasons to keep shining.
+        <br><br>
+        Never stop being the wonderful person you are. ❤️
+      </p>
 
-        <h2>
-          For you,<br>
-          <em>Vaishu.</em>
-        </h2>
+      <div class="final-heart">♡</div>
 
-        <p class="final-message">
-          On your special day, I just want you to know
-          how amazing you are.
-          <br><br>
-          May your life always be filled with happiness,
-          beautiful memories, genuine smiles and
-          countless reasons to keep shining.
-          <br><br>
-          Never stop being the wonderful person you are.
-          ❤️
-        </p>
+      <p class="birthday-wish">Happy Birthday, Vaishu! 🎂</p>
+    </div>
+  </section>
 
-        <div class="final-heart">♡</div>
+  <footer>
+    Made with <span>♥</span> specially for Vaishu
+  </footer>
 
-        <p class="birthday-wish">
-          Happy Birthday, Vaishu! 🎂
-        </p>
+</div>
 
-      </div>
+<script src="script.js"></script>
 
-    </section>
-
-
-    <footer>
-      Made with <span>♥</span> specially for Vaishu
-    </footer>
-
-  </div>
-
-
-  <script src="script.js"></script>
-
-  <audio id="birthdaySong" loop>
+<audio id="birthdaySong" loop>
   <source src="Yeh Raatein Yeh Mausam.mp3" type="audio/mpeg">
 </audio>
 
-<button id="musicBtn" class="music-btn" aria-label="Music">
-  🔊
-</button>
+<button id="musicBtn" class="music-btn" aria-label="Music">🔊</button>
 
 </body>
 </html>
-
